@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        perspective: 1000px;
+        justify-content: center;
+
+
+
+    }
+
+    .card {
+        background-color: gray;
+        width: 200px;
+        height: 200px;
+        transition-duration: 2s;
+        transform-style: preserve-3d;
+
+    }
+
+    .card > div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+
+    }
+
+    .front {
+        background-color: blue;
+        transform: rotateY(180deg);
+    }
+
+
+    .back {
+        background-color: yellow;
+        backface-visibility: hidden;
+    }
+
+    .card:hover {
+        transform: rotateY(-180deg);
+    }
+
+    .flip {
+        transform: rotateY(-180deg);
+    }
+
+
+
+</style>
+<div class="container">
+    <div class="card">
+        <div class="front">Front
+            <h1>AAAA</h1>
+        </div>
+        <div class="back">Back
+            <h1>BBBB</h1>
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">Front</div>
+        <div class="back">Back</div>
+    </div>
+    <div class="card">
+        <div class="front">Front</div>
+        <div class="back">Back</div>
+    </div>
+    <div class="card">
+        <div class="front">Front</div>
+        <div class="back">Back</div>
+    </div>
+</div>
+
+<script>
+
+    document.querySelectorAll(".card").forEach(e => {
+        e.addEventListener("click", function (event){
+
+            var target = event.target;
+
+            console.log(target);
+
+        }, false );
+    })
+
+</script>
+
+</body>
+</html>

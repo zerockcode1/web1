@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .container {
+        display: flex;
+    }
+
+    .item {
+        height: 100px;
+        width: 100px; /* A fixed width as the default */
+        margin-left: 2%;
+    }
+    .item-center {
+        flex-grow: 1; /* Set the middle element to grow and stretch */
+    }
+
+</style>
+<div class="container">
+    <div class="header item">
+        <h1>Header</h1>
+    </div>
+    <div class="main  item-center">
+        <h1>Main</h1>
+    </div>
+    <div class="footer item">
+        <h1>Footer</h1>
+    </div>
+</div>
+</body>
+</html>
