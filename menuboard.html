@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+
+.btnbox {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.container {
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    transition-duration: 1s;
+    background-color: lightskyblue;
+    transform-origin: center;
+    position: relative;
+}
+
+.board {
+    position: absolute;
+    width:800px;
+    height: 800px;
+    background-color: green;
+    backface-visibility: hidden;
+    z-index: 10;
+
+}
+
+.board:nth-child(1) {
+    background-color: palevioletred;
+    transform: translateZ(200px);
+}
+
+.board:nth-child(2) {
+    background-color: blue;
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.board:nth-child(3) {
+    background-color:olivedrab;
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.board:nth-child(4) {
+    background-color:gold;
+    transform: rotateY(270deg) translateZ(200px);
+}
+
+
+.b1 {
+    transform: rotateY(90deg);
+}
+.b2 {
+    transform: rotateY(180deg);
+}
+.b3 {
+    transform: rotateY(270deg);
+}
+
+.b4 {
+    transform: rotateY(360deg);
+}
+
+</style>
+
+<div class="outer">
+<div class="btnbox">
+    <button id="b1">b1</button>
+    <button id="b2">b2</button>
+    <button id="b3">b3</button>
+    <button id="b4">b4</button>
+</div>
+
+
+<div class="container">
+    <div class="board ">
+      <ul>
+          <li>AAAA</li>
+      </ul>
+    </div>
+    <div class="board ">
+        <ul>
+            <li>BBBB</li>
+        </ul>
+    </div>
+    <div class="board ">
+        <ul>
+            <li>CCCC</li>
+        </ul>
+    </div>
+    <div class="board ">
+        <ul>
+            <li>DDDD</li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+
+<script>
+
+    var box = document.querySelector(".btnbox");
+    var container = document.querySelector(".container")
+
+    box.addEventListener("click", function(event) {
+
+        var target = event.target.id;
+
+        console.log(target);
+
+        container.setAttribute("class", "container " + target);
+
+    },false);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
