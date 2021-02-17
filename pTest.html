@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    function loadData(task, time){
+
+        return new Promise(function(resolve, reject){
+            setTimeout(function() {
+                resolve( task + task );
+                console.log("-----------" + task);
+            }, time);
+        });
+    }
+
+
+    loadData("JOB1 ",3000).then( (str) => loadData(str +"JOB 2",2000)
+        .then(result => console.log(result)) );
+
+
+
+</script>
+
+</body>
+</html>

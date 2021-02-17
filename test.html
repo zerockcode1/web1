@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var a = 1;
+
+    function doA() {
+        console.log("doA");
+        console.log("1:"+ a);
+        console.log("3:"+ a);
+        var a = function () {
+            console.log("function a")
+            console.log("4:" + a)
+
+        }
+        a();
+        console.log("5:" + a);
+    }
+
+    doA();
+
+</script>
+
+</body>
+</html>
